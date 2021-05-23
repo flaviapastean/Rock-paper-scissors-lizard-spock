@@ -6,14 +6,14 @@ import sys
 
 class PrintLogger:  # crearea unei ferestre ca obiect
 
-    def __init__(self, textbox):  # pass reference to text widget
-        self.textbox = textbox  # keep ref
-
+    def __init__(self, textbox): 
+        self.textbox = textbox  
+        
     def write(self, text):
-        self.textbox.insert(tk.END, text)  # write text to textbox
-        # could also scroll to end of textbox here to make sure always visible
+        self.textbox.insert(tk.END, text)  
+        
 
-    def flush(self):  # needed for file like object
+    def flush(self): 
         pass
 
 
@@ -41,10 +41,10 @@ root = tk.Tk()
 Label(root, text="Rock Paper Scissor Lizard Spock", font="normal 20 bold", fg="red").pack(pady=20)
 t = tk.Text()
 t.pack()
-# create instance of file like object
+# creare instanta pt fisier
 pl = PrintLogger(t)
 
-# replace sys.stdout with our object
+# inlocuire sys.stdout cu obiectul creat
 sys.stdout = pl
 
 menu = Menu(root)
